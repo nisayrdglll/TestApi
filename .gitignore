@@ -1,0 +1,17 @@
+# IDE
+.vs/
+*.user
+*.suo
+.idea/
+.vscode/
+
+# .NET build
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+**/publish/
+
+# Logs & misc
+*.log

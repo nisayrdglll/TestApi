@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+    <ItemGroup>
+	    <Content Include="..\Reports\**\*.*">
+		    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="NewFolder\**" />
+      <Content Remove="..\Reports\Reports\**" />
+      <Content Remove="NewFolder\**" />
+      <EmbeddedResource Remove="NewFolder\**" />
+      <None Remove="NewFolder\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="..\Reports\DataSets\DataSet1.cs" />
+      <Content Remove="..\Reports\DataSets\DataSet1.Designer.cs" />
+      <Content Remove="..\Reports\DataSets\DataSet1.xsc" />
+      <Content Remove="..\Reports\DataSets\DataSet1.xsd" />
+      <Content Remove="..\Reports\DataSets\DataSet1.xss" />
+      <Content Remove="wwwroot\Reports\IlkYilProjelereGoreHarcamaGrubuHiyerarsisiRaporu.rdlc" />
+      <Content Remove="wwwroot\Reports\IllerRaporu.rdlc" />
+      <Content Remove="wwwroot\Reports\PlanlananIsKalemleri.rdlc" />
+      <Content Remove="wwwroot\Reports\PlanlananIsKalemleri2026.rdlc" />
+      <Content Remove="wwwroot\Reports\PlanlananIsKalemleri2027.rdlc" />
+      <Content Remove="wwwroot\Reports\PlanlananIsProgramiIslerRaporu.rdlc" />
+      <Content Remove="wwwroot\Reports\ProjelereGoreHarcamaGrubuHiyerarsisiRaporu.rdlc" />
+      <Content Remove="wwwroot\Reports\ProjelereGoreHarcamaGrubuHiyerarsisiRaporu2027.rdlc" />
+    </ItemGroup>
+
+
+	<ItemGroup>
+    <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\DataModels\DataModels.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LogLib">
+      <HintPath>LogLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\custom\" />
+    <Folder Include="wwwroot\plugins\custom\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Reports\IlkYilProjelereGoreHarcamaGrubuHiyerarsisiRaporu.rdlc" />
+    <None Include="wwwroot\Reports\IllerRaporu.rdlc" />
+    <None Include="wwwroot\Reports\PlanlananIsKalemleri.rdlc" />
+    <None Include="wwwroot\Reports\PlanlananIsKalemleri2026.rdlc" />
+    <None Include="wwwroot\Reports\PlanlananIsKalemleri2027.rdlc" />
+    <None Include="wwwroot\Reports\PlanlananIsProgramiIslerRaporu.rdlc" />
+    <None Include="wwwroot\Reports\ProjelereGoreHarcamaGrubuHiyerarsisiRaporu2027.rdlc" />
+    <None Include="wwwroot\Reports\ProjelereGoreHarcamaGrubuHiyerarsisiRaporu.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="..\Reports\DataSets\IllerRaporuDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IllerRaporuDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="..\Reports\DataSets\IllerRaporuDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IllerRaporuDataSet.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Update="..\Reports\DataSets\PlanlananIsProgramiIslerDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PlanlananIsProgramiIslerDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Update="..\Reports\DataSets\PlanlananIsProgramiIslerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlanlananIsProgramiIslerDataSet.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Update="Views\Proje\Revize.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\custom\pages\default\page.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
